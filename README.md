@@ -50,8 +50,6 @@ This project is a dynamic, clear, and reusable Next.js (App Router) dashboard fo
 - Unit and integration tests
 - More sorting/filtering options
 - Better accessibility and keyboard navigation
-- API rate limit handling
-
 
 ## Architecture
 - **App structure:** Modular, feature-based folders for clarity and reusability
