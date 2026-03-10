@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+
+# Real-Time Crypto Market Dashboard
+
+This project is a dynamic, clear, and reusable Next.js (App Router) dashboard for real-time cryptocurrency market data. Built with TypeScript and Tailwind CSS, it follows best practices for modularity and maintainability.
+
+
+## Features
+- Markets list with at least 10 trading pairs
+- Real-time updates via Binance WebSocket
+- Market details page with live data
+- Favorites (persisted in localStorage)
+- Search by symbol, filter & sort (favorites first, alphabetical, highest price, highest 24h change)
+- Recently viewed markets section
+- Responsive design (desktop & mobile)
+- Connection status and auto-reconnect
+- Loading skeletons, error, and empty states
+- TypeScript, Tailwind CSS, clean architecture
+- Light/dark theme toggle (with persistence)
+- Polished number/time formatting
+
+
 
 ## Getting Started
 
-First, run the development server:
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Run the development server:
+   ```bash
+   npm run dev
+   ```
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Folder Structure
+- `src/components` – Reusable UI components
+- `src/features` – Feature-specific components (markets, favorites, etc)
+- `src/hooks` – Custom React hooks
+- `src/utils` – Utility functions
+- `src/types` – TypeScript types/interfaces
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Uses Binance public WebSocket and REST APIs
+- Favorites and recently viewed are stored in browser localStorage
+- Handles WebSocket reconnects and connection status
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Improvements (with more time)
+- More advanced error handling
+- Unit and integration tests
+- More sorting/filtering options
+- Better accessibility and keyboard navigation
+- API rate limit handling
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## Architecture
+- **App structure:** Modular, feature-based folders for clarity and reusability
+- **Real-time data:** Managed via custom hooks using WebSocket API
+- **State management:** React hooks for local state, localStorage for persistence
+- **Resilience:** Auto-reconnect logic for WebSocket, clear connection status UI
+- **UI polish:** Skeletons, formatting, and theme toggle for best UX
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
