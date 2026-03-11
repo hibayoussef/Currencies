@@ -1,5 +1,6 @@
 // Generic input for toolbar
-import type { InputProps } from "@/types/input";
+
+import type { InputProps } from "@/types/ui";
 
 export const Input = ({ value, onChange, placeholder = "", icon, className = "" }: InputProps) => (
   <div className={`flex items-center w-full sm:w-64 bg-white dark:bg-zinc-900 rounded-xl shadow px-3 py-2 ${className}`}>

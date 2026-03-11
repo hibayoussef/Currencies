@@ -7,18 +7,24 @@ import { THEME_LIGHT, THEME_DARK, Theme } from "@/constants/theme";
  * ThemeToggle component: toggles between light and dark mode, persists in localStorage.
  */
 export const ThemeToggle = () => {
-  const getInitialTheme = () => {
-    if (typeof window === "undefined") return THEME_LIGHT;
-    const stored = localStorage.getItem("theme");
-    if (stored === THEME_DARK || stored === THEME_LIGHT) return stored as Theme;
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) return THEME_DARK;
-    return THEME_LIGHT;
-  };
-  const [theme, setTheme] = useState<Theme>(getInitialTheme);
+  // Initialize with THEME_LIGHT to avoid SSR mismatch
+  const [theme, setTheme] = useState<Theme>(THEME_LIGHT);
+
+  // On mount, sync theme from localStorage or system preference
+  useEffect(() => {
+    const stored = typeof window !== "undefined" ? localStorage.getItem("theme") : null;
+    if (stored === THEME_DARK || stored === THEME_LIGHT) {
+      setTheme(stored as Theme);
+    } else if (typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      setTheme(THEME_DARK);
+    }
+  }, []);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", theme === THEME_DARK);
-    localStorage.setItem("theme", theme);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("theme", theme);
+    }
   }, [theme]);
 
   const handleToggle = useCallback(() => {

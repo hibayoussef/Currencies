@@ -1,11 +1,5 @@
+import type { TickerData } from "@/types/market";
 import { useEffect, useRef, useState } from "react";
-
-// Ticker data type
-interface TickerData {
-  price: string;
-  priceChangePercent: string;
-  eventTime: number;
-}
 
 /**
  * Custom hook to subscribe to real-time ticker data for a market symbol.

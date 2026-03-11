@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import { useMarketTicker } from "@/hooks/useMarketTicker";
-import { MarketDetailsProps } from "@/types/market-details";
 import { formatNumber, formatTime } from "@/utils/format";
 import { Skeleton } from "../common/Skeleton";
+import type { MarketDetailsProps } from "@/types/market";
 
 export const MarketDetails: React.FC<MarketDetailsProps> = ({ symbol }) => {
   const { data, status } = useMarketTicker(symbol);

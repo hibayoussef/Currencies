@@ -1,5 +1,5 @@
-import type { Market } from "@/types/market-list";
-import { SortType } from "@/types/market-toolbar";
+import type { Market, SortType } from "@/types/market";
+
 
 /**
  * Filter and sort markets by search, favorites, sort type.

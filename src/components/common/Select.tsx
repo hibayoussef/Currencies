@@ -1,6 +1,6 @@
 
 // Generic select for toolbar
-import type { MarketToolbarSelectProps } from "@/types/market-toolbar-select";
+import type { MarketToolbarSelectProps } from "@/types/ui";
 
 export const Select = ({ value, onChange, options, icon, className = "" }: MarketToolbarSelectProps) => (
   <div className={`flex items-center bg-white dark:bg-zinc-900 rounded-xl shadow px-3 py-2 ${className}`}>

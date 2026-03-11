@@ -1,9 +1,9 @@
 
 
-import type { MarketToolbarProps, SortType } from "@/types/market-toolbar";
+import type { MarketToolbarProps, SortType } from "@/types/market";
 import { Input } from "../common/Input";
 import { Select } from "../common/Select";
-import type { MarketToolbarSelectOption } from "@/types/market-toolbar-select";
+import type { MarketToolbarSelectOption } from "@/types/ui";
 export const MarketToolbar = ({ search, setSearch, sort, setSort }: MarketToolbarProps) => (
   <div className="flex flex-col sm:flex-row gap-4 mb-8 w-full items-center justify-between bg-linear-to-r from-blue-500 via-purple-500 to-pink-500 p-6 rounded-xl shadow-lg">
     <Input

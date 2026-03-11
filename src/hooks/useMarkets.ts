@@ -1,4 +1,4 @@
-import type { Market } from "@/types/market-list";
+import type { Market } from "@/types/market";
 import { useEffect, useState } from "react";
 
 /**

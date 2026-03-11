@@ -1,4 +1,4 @@
-import type { MarketListItemProps } from "@/types/market-list-item";
+import type { MarketListItemProps } from "@/types/market";
 import React from "react";
 
 export const MarketListItem: React.FC<MarketListItemProps> = ({

@@ -3,7 +3,7 @@ import { MarketListSkeleton } from "./MarketList/MarketListSkeleton";
 import { MarketListEmpty } from "./MarketList/MarketListEmpty";
 import { MarketListError } from "./MarketList/MarketListError";
 import { MarketListItem } from "./MarketList/MarketListItem";
-import type { MarketListProps } from "@/types/market-list";
+import type { MarketListProps } from "@/types/market";
 
 export const MarketList: React.FC<MarketListProps> = ({ markets, loading, error, onSelect, favorites = [], onToggleFavorite }) => {
   if (loading) return <MarketListSkeleton />;

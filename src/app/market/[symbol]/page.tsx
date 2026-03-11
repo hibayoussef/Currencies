@@ -1,5 +1,5 @@
 import { MarketDetails } from "@/components/market/MarketDetails";
-import type { MarketPageProps } from "@/types/market-page";
+import type { MarketPageProps } from "@/types/market";
 
 async function checkSymbolExists(symbol: string): Promise<boolean> {
   try {
