@@ -1,13 +1,30 @@
-import React from "react";
-import { MarketListSkeleton } from "./MarketList/MarketListSkeleton";
-import { MarketListEmpty } from "./MarketList/MarketListEmpty";
-import { MarketListError } from "./MarketList/MarketListError";
-import { MarketListItem } from "./MarketList/MarketListItem";
 import type { MarketListProps } from "@/types/market";
+import { MarketListSkeleton } from "./MarketList/MarketListSkeleton";
+import { MarketListError } from "./MarketList/MarketListError";
+import { MarketListEmpty } from "./MarketList/MarketListEmpty";
+import { MarketListItem } from "./MarketList/MarketListItem";
 
-export const MarketList: React.FC<MarketListProps> = ({ markets, loading, error, onSelect, favorites = [], onToggleFavorite }) => {
+export const MarketList: React.FC<MarketListProps> = ({
+  markets,
+  loading,
+  error,
+  onSelect,
+  favorites = [],
+  onToggleFavorite,
+}) => {
   if (loading) return <MarketListSkeleton />;
-  if (error) return <MarketListError error={error} />;
+  if (error)
+    return (
+      <div>
+        <MarketListError error={error} />
+        <button
+          className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+          onClick={() => window.location.reload()}
+        >
+          Try again
+        </button>
+      </div>
+    );
   if (!markets.length) return <MarketListEmpty />;
 
   return (
