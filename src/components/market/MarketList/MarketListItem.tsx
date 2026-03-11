@@ -1,7 +1,7 @@
 import type { MarketListItemProps } from "@/types/market";
 import React from "react";
 
-export const MarketListItem: React.FC<MarketListItemProps> = ({
+const MarketListItemComponent: React.FC<MarketListItemProps> = ({
   symbol,
   baseAsset,
   quoteAsset,
@@ -47,7 +47,7 @@ export const MarketListItem: React.FC<MarketListItemProps> = ({
         className="text-purple-600 hover:text-pink-500 transition ml-2"
         target="_blank"
         rel="noopener noreferrer"
-        title="تفاصيل"
+        title="details"
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
           <circle cx="12" cy="12" r="10" />
@@ -58,3 +58,5 @@ export const MarketListItem: React.FC<MarketListItemProps> = ({
     </div>
   </li>
 );
+
+export const MarketListItem = React.memo(MarketListItemComponent);
