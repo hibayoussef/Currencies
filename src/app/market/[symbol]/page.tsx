@@ -17,7 +17,7 @@ export default async function MarketPage({ params }: MarketPageProps) {
   if (!symbol) {
     return (
       <div className="flex flex-col items-center min-h-screen bg-zinc-50 dark:bg-black">
-        <div className="mt-20 text-center text-red-600 text-xl font-bold">رمز العملة غير موجود أو غير صحيح</div>
+        <div className="mt-20 text-center text-red-600 text-xl font-bold"> The currency symbol does not exist or is invalid</div>
       </div>
     );
   }
@@ -25,7 +25,7 @@ export default async function MarketPage({ params }: MarketPageProps) {
   if (!exists) {
     return (
       <div className="flex flex-col items-center min-h-screen bg-zinc-50 dark:bg-black">
-        <div className="mt-20 text-center text-red-600 text-xl font-bold">رمز العملة غير موجود أو غير صحيح</div>
+        <div className="mt-20 text-center text-red-600 text-xl font-bold"> The currency symbol does not exist or is invalid</div>
       </div>
     );
   }
